@@ -1,6 +1,8 @@
-function squareDigits(num) {
+// First solution
+function squareDigits2(num) {
   const convertNumToString = num.toString();
   const digits = convertNumToString.split("");
+  console.log(digits);
   const squares = [];
   digits.forEach((digit) => {
     const number = Number(digit);
@@ -12,5 +14,12 @@ function squareDigits(num) {
   return result;
 }
 
-const x = squareDigits(9119);
-console.log(x);
+// Refactoring
+function squareDigits(num) {
+  const res = +num
+    .toString()
+    .split("")
+    .map((x) => Number(x) * Number(x))
+    .join("");
+  console.log(res);
+}
